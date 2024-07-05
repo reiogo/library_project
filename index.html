@@ -13,9 +13,9 @@
     <div>
         <button class="new-book-button">NEW BOOK</button>
       <div class="submit-form">
-        <form action="index_submit" method="post" accept-charset="utf-8">
-          <fieldset id="book_details">
-            <legend>Book details</legend>
+        <form action="index_submit" method="post" accept-charset="utf-8" class="book-submission-form">
+          <fieldset id="book_details" class="formFieldset">
+            <legend>New Book Submission</legend>
             <p>
               <label for="title">Title:</label>
               <input type="text" name="title" value="title" id="title">
@@ -34,17 +34,17 @@
               </legend>
               <ul>
                 <li>
-                  <label for="haveRead">Yes</label>
+                  <label for="haveRead" class="readOrNotLabel">Yes</label>
                   <input type="radio" name="readOrNot" id="haveRead" checked>
                 </li>
                 <li>
-                  <label for="notRead">No</label>
+                  <label for="notRead" class="readOrNotLabel">No</label>
                   <input type="radio" name="readOrNot" id="notRead">
                 </li>
               </ul>
             </fieldset>
-          </fieldset>
           <button class="submit-button">Submit</button>
+          </fieldset>
         </form>
 
       </div>

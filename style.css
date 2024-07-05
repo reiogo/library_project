@@ -3,9 +3,25 @@ body {
   font-family: Arial, san-serif;
   line-height: 1.5rem;
 }
+
 body>div {
   display:flex;
   flex-wrap: wrap;
+}
+
+.book-submission-form input[type="text"] {
+  color: gray;
+  height: 1.5rem;
+  width: 200px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.readOrNotLabel {
+  display: block;
+  width: 3rem;
 }
 
 .new-book-button {
@@ -17,14 +33,20 @@ body>div {
   /* display: none; */
 }
 
-input [type="text"] {
-  box-sizing: border-box;
-  border-radius: 10%;
-  margin: 0;
-  padding: 0;
-}
 .readOrNotFieldset {
   border: none;
+}
+.formFieldset {
+  border-radius: 2%;
+} 
+
+ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+li {
+  display: flex;
 }
 
 .books-container {
