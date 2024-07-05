@@ -5,12 +5,10 @@ body {
 }
 
 body>div {
-  display:flex;
-  flex-wrap: wrap;
 }
 
-.book-submission-form input[type="text"] {
-  color: gray;
+.book-submission-form input[type="text"],
+.book-submission-form input[type="tel"] {
   height: 1.5rem;
   width: 200px;
   padding: 0;
@@ -30,7 +28,8 @@ body>div {
 
 .submit-form {
   margin: 20px;
-  /* display: none; */
+  display: none;
+  width: min(350px, 75vw);
 }
 
 .readOrNotFieldset {

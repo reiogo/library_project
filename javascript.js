@@ -23,12 +23,16 @@ addBookToLibrary("Harry Potter", "JK Rowling", 700, "Yes");
 function displayBooks() {
 
   const booksContainer = document.querySelector(".books-container");
-  let card = document.createElement("div");
-  booksContainer.replaceChild(card, booksContainer.childNodes[0]);
+  // Remove any pre-existing books
+  while (booksContainer.hasChildNodes()) {
+    booksContainer.removeChild(booksContainer.firstChild);
+  }
   
-
   for (let i=0; i < myLibrary.length; i++) {
+    // First create card in the loop
+    let card = document.createElement("div");
     
+    // Then create all the text
     let titleCard = document.createElement ("span");
     titleCard.innerText += `Title: ${myLibrary[i].title}`;
     card.appendChild(titleCard)
@@ -41,7 +45,13 @@ function displayBooks() {
     let readCard = document.createElement ("span");
     readCard.innerText += `Have you read this?: ${ myLibrary[i].readOrNot }`;
     card.appendChild(readCard)
+    // Add button
+
+    // Append card to container
+    booksContainer.appendChild(card);
   }
+
+
 }
 
 // Display form upon button click
@@ -57,10 +67,6 @@ function displayForm() {
     submitForm.style.display = "block"; 
     submitButton.style.display = "none";
   } 
-  // else {
-  //   submitForm.style.display = "none";
-  //   submitButton.style.display = "block";
-  // }
 }
 
 
@@ -84,6 +90,12 @@ function bookSubmit(event) {
  
   addBookToLibrary(title, author, pages, readOrNot);
   displayBooks();
+
+  // Make form disappear and button reappear
+  let submitForm = document.querySelector(".submit-form");
+  let submitButton = document.querySelector(".new-book-button");
+  submitForm.style.display = "none";
+  submitButton.style.display = "block";
 }
 
   
