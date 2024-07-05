@@ -1,13 +1,25 @@
 body {
   font-size: 22px;
-  font-family: 'san-serif';
+  font-family: Arial, san-serif;
   line-height: 1.5rem;
 }
+body>div {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.new-book-button {
+  height: 1.8rem;
+}
+
+.submit-form {
+  margin: 20px;
+}
+
 .books-container {
   display: grid;
   border: 1px solid black;
   margin: 20px;
-  height: 400px;
   grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));
   gap: 10px;
   background-color: lightgray;
