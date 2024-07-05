@@ -41,21 +41,22 @@ function displayBooks() {
 }
 
 // Display form upon button click
-document.querySelector(".new-book-button").addEventListener("click", formDisplay);
+document.querySelector(".new-book-button").addEventListener("click", displayForm);
 
-// Default to not displaying submit form
+function displayForm () {
 
-function formDisplay () {
   let submitForm = document.querySelector(".submit-form");
   let submitButton = document.querySelector(".new-book-button");
-  if (submitForm.style.display === "none") {
-   submitForm.style.display = "block"; 
-    submitButton.style.display = "none";
-  } else {
-    submitForm.style.display = "none";
-    submitButton.style.display = "block";
-  }
+  submitForm.style.display = "none";
 
+  if (submitForm.style.display === "none") {
+    submitForm.style.display = "block"; 
+    submitButton.style.display = "none";
+  } 
+  // else {
+  //   submitForm.style.display = "none";
+  //   submitButton.style.display = "block";
+  // }
 }
   
   

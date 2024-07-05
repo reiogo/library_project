@@ -14,6 +14,17 @@ body>div {
 
 .submit-form {
   margin: 20px;
+  /* display: none; */
+}
+
+input [type="text"] {
+  box-sizing: border-box;
+  border-radius: 10%;
+  margin: 0;
+  padding: 0;
+}
+.readOrNotFieldset {
+  border: none;
 }
 
 .books-container {
