@@ -16,7 +16,6 @@ Book.prototype.readOrNotToggling = function () {
   } else {
     res = "Yes";
   }
-  console.log('res');
   this.readOrNot = res;
 }
 
@@ -115,10 +114,14 @@ function bookSubmit(event) {
   displayBooks();
 
   // Make form disappear and button reappear
-  let submitForm = document.querySelector(".submit-form");
-  let submitButton = document.querySelector(".new-book-button");
+  const submitForm = document.querySelector(".submit-form");
+  const submitButton = document.querySelector(".new-book-button");
   submitForm.style.display = "none";
   submitButton.style.display = "block";
+  // submitForm.reset();
+  const formSelector = document.querySelector(".book-submission-form");
+  formSelector.reset();
+
 }
 
 // Remove card upon click
@@ -126,7 +129,7 @@ let removebutton = document.querySelector(".books-container");
 removebutton.addEventListener("click", cardButtonClick);
 
 function cardButtonClick(event) {
-  indexOfCard = Number(event.target.value);
+  indexOfCard = Number((event.target.closest("div").attributes[0].value));
 
   if (event.target.matches(".remove-button")) {
     const booksContainer = document.querySelector(".books-container");
@@ -141,11 +144,6 @@ function cardButtonClick(event) {
   
   
 }
-
-
-  
-  
-
 
 // Display books
 displayBooks();
