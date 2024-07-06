@@ -45,10 +45,20 @@ function displayBooks() {
     let readCard = document.createElement ("span");
     readCard.innerText += `Have you read this?: ${ myLibrary[i].readOrNot }`;
     card.appendChild(readCard)
-    // Add button
+
+    // Add remove and read buttons
+    removeButton = document.createElement("button");
+    removeButton.setAttribute("class", "remove-button");
+    removeButton.textContent += "Remove Book";
+    readButton = document.createElement("button");
+    readButton.setAttribute("class", "read-button");
+    readButton.textContent += "Change Read Status";
 
     // Append card to container
     booksContainer.appendChild(card);
+    card.appendChild(removeButton);
+    card.appendChild(readButton);
+    
   }
 
 
