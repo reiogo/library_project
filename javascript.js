@@ -9,6 +9,18 @@ function Book(title, author, pages, readOrNot) {
   this.readOrNot = readOrNot;
 }
 
+Book.prototype.readOrNotToggling = function () {
+  let res = "";
+  if (this.readOrNot === "Yes") {
+    res = "No"; 
+  } else {
+    res = "Yes";
+  }
+  console.log('res');
+  this.readOrNot = res;
+}
+
+
 function addBookToLibrary(title, author, pages, readOrNot) {
 
   let book = new Book(title, author, pages, readOrNot);
@@ -31,6 +43,7 @@ function displayBooks() {
   for (let i=0; i < myLibrary.length; i++) {
     // First create card in the loop
     let card = document.createElement("div");
+    card.setAttribute("value", `${i}`);
     
     // Then create all the text
     let titleCard = document.createElement ("span");
@@ -107,6 +120,28 @@ function bookSubmit(event) {
   submitForm.style.display = "none";
   submitButton.style.display = "block";
 }
+
+// Remove card upon click
+let removebutton = document.querySelector(".books-container");
+removebutton.addEventListener("click", cardButtonClick);
+
+function cardButtonClick(event) {
+  indexOfCard = Number(event.target.value);
+
+  if (event.target.matches(".remove-button")) {
+    const booksContainer = document.querySelector(".books-container");
+    myLibrary.splice(indexOfCard, 1);
+    displayBooks();
+
+  } else if (event.target.matches(".read-button")) {
+    myLibrary[indexOfCard].readOrNotToggling(); 
+    displayBooks();
+    
+  }
+  
+  
+}
+
 
   
   
