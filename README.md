@@ -1,4 +1,5 @@
 # library_project
 Library web-app
 
-Project inspiration: https://www.theodinproject.com/lessons/node-path-javascript-library
+Live site version: https://reiogo.github.io/odin_library_project/
+
