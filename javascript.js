@@ -99,8 +99,20 @@ const bookSubmitForm = document.querySelector(".submit-button");
 
 bookSubmitForm.addEventListener("click", bookSubmit);
 
+const validate = function addValidationToForm() {
+  const title = document.getElementById("title");
+  const author = document.getElementById("author");
+  const pages = document.getElementById("pages");
+  const readOrNot = document.querySelector("input[type=radio]:checked");
+
+  return (title.validity.valid && author.validity.valid && pages.validity.valid && readOrNot.validity.valid);
+  
+}
 
 function bookSubmit(event) {
+  if (validate() == false) {
+    return;
+  }
 
   event.preventDefault();
 
